@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <title>Sample</title>
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            margin: 0;
+        }
+
+        header {
+            border-bottom: solid 1px #CED4DA;
+        }
+
+        footer {
+            background: #F8F9FA;
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            display: inline-block;
+        }
+
+        footer ul {
+            margin: 0;
+        }
+
+        .footer_img {
+            padding-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        .footer_img_1 {
+            margin-right: 0.4em;
+        }
+
+        .footer_copy {
+            margin-top: 10px;
+            padding-bottom: 30px;
+            color: #ADB5BD;
+        }
+
+        #footer_img_each {
+            width: 1.7em;
+        }
+
+        li {
+            float: left;
+            border-right: 1px solid #E3E7EB;
+            overflow: visible;
+            font-size: 0.9em;
+            color: #343A40;
+            margin-top: 0.4em;
+            margin-bottom: 0.4em;
+            padding: 0px;
+            padding-left: 2em;
+            padding-right: 2em;
+        }
+
+        footer li {
+            margin: 0;
+            color: #868E96;
+        }
+
+        .most_right {
+            border: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .subtitle {
+            margin: 1.7em;
+            margin-bottom: 0.7em;
+            font-size: 1.1em;
+        }
+
+        .top_title {
+            width: 40%;
+            text-align: center;
+            margin: auto;
+        }
+
+        .title_img {
+            width: 35%
+        }
+
+        .main {
+            width: 40%;
+            margin: auto;
+            margin-top: 3.5em;
+            color: #495057;
+            margin-bottom: 1.3%;
+        }
+
+        .form_box {
+            text-align: left;
+        }
+
+        .form_question {
+            background: #FFFFFF;
+            border: 1px solid #CED4DA;
+            padding: 2%;
+            padding-left: 3%;
+        }
+
+        .form_answer {
+            border: 1px solid #CED4DA;
+            border-top: none;
+            padding: 2%;
+            height: 5em;
+            background: #F1F3F5;
+            text-align: center;
+        }
+
+        .empty {
+            height: 1.5em;
+            background: #FFFFFF;
+            border: none;
+        }
+
+        .apply {
+            border: 1px solid #03B8F1;
+            border-radius: 3px;
+            color: #03B8F1;
+            background: #FFFFFF;
+            font-weight: bold;
+            font-size: 1.1em;
+            padding: 1%;
+            padding-left: 4%;
+            padding-right: 4%;
+            margin-bottom: 10px;
+        }
+
+        .apply:hover {
+            box-shadow: 0px 0px 5px 1px;
+        }
+
+        .apply_box {
+            margin-top: 1.5em;
+            text-align: right;
+        }
+
+        .form_text {
+            position: relative;
+            top: 28%;
+            border: none;
+            background: transparent;
+            border-bottom: 1.5px solid #CED4DA;
+            font-weight: bold;
+            width: 97%;
+            padding-bottom: 0.7%;
+            color: #495057;
+        }
+
+        .form_text:hover {
+            border-bottom: 3px solid #5DD2F6;
+        }
+
+        .form_text:focus {
+            outline: none;
+            color: #5DD2F6;
+            border-bottom: 3px solid #5DD2F6;
+        }
+
+        input::placeholder {
+            color: #CED4DA;
+        }
+
+        .radio,
+        .checkbox {
+            position: relative;
+            top: 28%;
+            text-align: left;
+            padding-left: 1%;
+        }
+
+        input[type=radio]:hover+label {
+            cursor: pointer;
+        }
+
+        input[type=checkbox]:hover+label {
+            cursor: pointer;
+        }
+
+        input[type=radio] {
+            display: none;
+        }
+
+        input[type=checkbox] {
+            display: none;
+        }
+
+        #yes+label {
+            display: inline-block;
+            width: 68px;
+            height: 31px;
+            background: url("https://user-images.githubusercontent.com/98504939/154197039-22c2a53c-f13a-4124-b92a-5b888da8bea8.svg") no-repeat 0 0px / contain;
+        }
+
+        #yes:checked+label {
+            background: url("https://user-images.githubusercontent.com/98504939/154194073-0af2ed1f-d718-4b33-aa30-0c978356ff2d.svg") no-repeat 0 0px / contain;
+        }
+
+        #no+label {
+            display: inline-block;
+            width: 65px;
+            height: 31px;
+            background: url("https://user-images.githubusercontent.com/98504939/154196850-bf533996-20ea-435a-a27f-ad7a1b180712.svg") no-repeat 0 0px / contain;
+        }
+
+        #no:checked+label {
+            background: url("https://user-images.githubusercontent.com/98504939/154196992-d272bb5e-5f4b-4537-ad99-a6cf41728658.svg") no-repeat 0 0px / contain;
+        }
+
+
+        #photoshop+label {
+            display: inline-block;
+            width: 115px;
+            height: 31px;
+            background: url("https://user-images.githubusercontent.com/98504939/154198701-4769c184-bb7a-48c1-bd4a-abfda0e516c2.svg") no-repeat 0 0px / contain;
+        }
+
+        #photoshop:checked+label {
+            background: url("https://user-images.githubusercontent.com/98504939/154199076-9f2c3bb1-438e-4039-907f-36d30ab632ed.svg") no-repeat 0 0px / contain;
+        }
+
+        #illustrator+label {
+            display: inline-block;
+            width: 109px;
+            height: 31px;
+            background: url("https://user-images.githubusercontent.com/98504939/154199284-b7e6f164-f7a4-4719-a349-71b4f248ae55.svg") no-repeat 0 0px / contain;
+        }
+
+        #illustrator:checked+label {
+            background: url("https://user-images.githubusercontent.com/98504939/154199322-d4d77279-6da1-43fe-ba0c-4f0e92fd24ec.svg") no-repeat 0 0px / contain;
+        }
+
+        #figma+label {
+            display: inline-block;
+            width: 86px;
+            height: 31px;
+            background: url("https://user-images.githubusercontent.com/98504939/154199648-50534420-8af3-47c7-8d61-2d0e9016eb02.svg") no-repeat 0 0px / contain;
+        }
+
+        #figma:checked+label {
+            background: url("https://user-images.githubusercontent.com/98504939/154199623-8e0e8e78-3432-4b7c-ac75-d75933b0a7fa.svg") no-repeat 0 0px / contain;
+        }
+
+        #xd+label {
+            display: inline-block;
+            width: 64px;
+            height: 31px;
+            background: url("https://user-images.githubusercontent.com/98504939/154199784-55d690c1-cd3f-4764-aabf-fb297e53ed09.svg") no-repeat 0 0px / contain;
+        }
+
+        #xd:checked+label {
+            background: url("https://user-images.githubusercontent.com/98504939/154199851-c967ba09-684f-44a8-abdf-e99ea6df961c.svg") no-repeat 0 0px / contain;
+        }
+
+        #sketch+label {
+            display: inline-block;
+            width: 89px;
+            height: 31px;
+            background: url("https://user-images.githubusercontent.com/98504939/154199930-14bf2f22-46ff-4cef-a6b2-874e3a233d5f.svg") no-repeat 0 0px / contain;
+        }
+
+        #sketch:checked+label {
+            background: url("https://user-images.githubusercontent.com/98504939/154199893-1872b97f-1436-4342-8365-2dfe193ebb1d.svg") no-repeat 0 0px / contain;
+        }
+
+        #other+label {
+            display: inline-block;
+            width: 83px;
+            height: 31px;
+            background: url("https://user-images.githubusercontent.com/98504939/154200525-4f87381b-3c67-465b-b409-7f87460450ee.svg") no-repeat 0 0px / contain;
+        }
+
+        #other:checked+label {
+            background: url("https://user-images.githubusercontent.com/98504939/154200513-872dfc65-bb9a-45dc-83d5-0c65bc6fc211.svg") no-repeat 0 0px / contain;
+        }
+
+        .form_textarea {
+            width: 97%;
+            height: 100px;
+            padding: 1%;
+            resize: none;
+            border: 1.5px solid #CED4DA;
+            margin: 1.5px;
+            outline: none;
+            border-radius: 3px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: bold;
+            color: #495057;
+        }
+
+        .form_textarea:hover {
+            outline: none;
+            margin: 0px;
+            border: 3px solid #5DD2F6;
+        }
+
+        .form_textarea:focus {
+            outline: none;
+            margin: 0px;
+            border: 3px solid #5DD2F6;
+            color: #5DD2F6
+        }
+
+        .form_textarea::placeholder {
+            font-weight: bold;
+            color: #CED4DA;
+        }
+
+        #form_intro {
+            height: 120%;
+        }
+
+        #form_file+label {
+            width: 100%;
+            height: 100%;
+            display: inline-block;
+            background: url("https://user-images.githubusercontent.com/98504939/154211199-eb4b46db-ccfa-4970-89c0-b5316f0cc0a5.svg") no-repeat 0 0px / contain;
+        }
+
+        #form_file:hover+label {
+            background: url("https://user-images.githubusercontent.com/98504939/154214948-cf2379b5-8e34-472a-b7fb-b2352b967ea1.svg") no-repeat 0 0px / contain;
+        }
+
+        .file_box {
+            display: inline-block;
+            text-align: center;
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #form_answer_file {
+            height: 15em;
+        }
+
+        .file_info {
+            text-align: left;
+            position: relative;
+            bottom: 9%;
+            color: #5DD2F6
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <ul>
+            <li>44기 리크루팅</li>
+            <li>디자인팀</li>
+            <li class="most_right">지원하기</li>
+        </ul>
+    </header>
+
+    <div class="container" style="color:#ADB5BD">
+        <div class="top_title">
+            <div class="subtitle">
+                44기 디자인팀 리크루팅 지원서
+            </div>
+            <img onclick="" class="title_img"
+                src="https://user-images.githubusercontent.com/98504939/154136887-c8530b59-5590-4ee1-8281-41d40004de07.svg">
+            <br>
+        </div>
+        <div class="main">
+            <form method="post" action="apply_ok.php">
+                <div class="form_box">
+                    <div class="form_question">지원자 분의 <b>이름</b>을 적어주세요. *</div>
+                    <div class="form_answer"><input type=text class="form_text" name="name" placeholder="e.g. 서린이"
+                            required>
+                    </div>
+                </div>
+                <div class="empty"></div>
+                <div class="form_box">
+                    <div class="form_question">지원자 분의 <b>학번</b>을 알려주세요. *</div>
+                    <div class="form_answer"><input type=text class="form_text" name="student_id"
+                            placeholder="e.g. 22학번" required></div>
+                </div>
+                <div class="empty"></div>
+                <div class="form_box">
+                    <div class="form_question">지원자 분의 <b>소속</b>을 알려주세요. *</div>
+                    <div class="form_answer"><input type=text class="form_text" name="department"
+                            placeholder="e.g. 미술대학 디자인과" required></div>
+                </div>
+                <div class="empty"></div>
+                <div class="form_box">
+                    <div class="form_question">지원자 분의 <b>SNULife ID</b>를 알려주세요. *</div>
+                    <div class="form_answer"><input type=text class="form_text" name="snulife_id"
+                            placeholder="제재이력 여부를 확인하기 위한 용도로만 사용됩니다. 없으면 '없음'이라고 적어주세요." required></div>
+                </div>
+                <div class="empty"></div>
+                <div class="form_box" id="form_box">
+                    <div class="form_question">지원자 분의 <b>전화번호</b>를 적어주세요. *</div>
+                    <div class="form_answer"><input type=text class="form_text" name="contact"
+                            placeholder="결과를 알려드리기 위한 용도로만 사용합니다. 리크루팅 종료 후 폐기합니다." required></div>
+                </div>
+                <div class="empty"></div>
+                <div class="form_box">
+                    <div class="form_question"><b>연속 3학기 이상</b> 활동이 가능하신가요?<br>
+                        3학기 내에 병역, 교환학생, 인턴 계획이 있으시면 'No'에 체크해주세요. *</div>
+                    <div class="form_answer">
+                        <div class="radio">
+                            <input type="radio" name="semester" id="yes"><label for="yes"></label>
+                            <input type="radio" name="semester" id="no"><label for="no"></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="empty"></div>
+                <div class="form_box">
+                    <div class="form_question">지원자 분이 <b>다룰 줄 아는 툴</b>을 모두 골라주세요.<br>
+                        해당 사항이 없다면 ‘Other’에 자유롭게 적어주세요. *</div>
+                    <div class="form_answer">
+                        <div class="checkbox">
+                            <input type="checkbox" id="photoshop"><label for="photoshop"></label>
+                            <input type="checkbox" id="illustrator"><label for="illustrator"></label>
+                            <input type="checkbox" id="figma"><label for="figma"></label>
+                            <input type="checkbox" id="xd"><label for="xd"></label>
+                            <input type="checkbox" id="sketch"><label for="sketch"></label>
+                            <input type="checkbox" id="other"><label for="other"></label>
+                        </div>
+                    </div>
+                    <div class="empty"></div>
+                    <div class="form_box">
+                        <div class="form_question">지원자 분에 대한 <b>소개</b>와 <b>SNULife 디자인팀에 지원하신 동기</b> 등을 자유롭게 적어주세요. *
+                        </div>
+                        <div class="form_answer" id="form_intro">
+                            <div class="intro_box">
+                                <textarea class="form_textarea" name="intro" placeholder="분량은 자유입니다."
+                                    required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="empty"></div>
+                    <div class="form_box">
+                        <div class="form_question">지원자 분이 <b>보여주시고 싶은 작업</b>이 있다면 파일로 첨부해주세요. *</div>
+                        <div class="form_answer" id="form_answer_file">
+                            <div class="file_box">
+                                <input type="file" multiple id="form_file" style="display:none">
+                                <label for="form_file"></label>
+                                <div class="file_info">선택된 파일 없음</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="apply_box">
+                        <button class="apply">제출하기</button>
+                    </div>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <div class="footer_img">
+            <img id="footer_img_each" class="footer_img_1"
+                src="https://user-images.githubusercontent.com/98504939/154150997-7131efe1-6917-46ac-afdd-3ea4e7a14ea7.svg">
+            <img id="footer_img_each"
+                src="https://user-images.githubusercontent.com/98504939/154151111-79816888-df45-45fa-bbeb-ee739d7a4298.png">
+        </div>
+        <div class="footer_ul">
+            <ul>
+                <li>SNULife 소개</li>
+                <li>이용약관</li>
+                <li>개인정보 처리방침</li>
+                <li class="most_right">커뮤니티 이용규칙</li>
+            </ul>
+        </div>
+        <div class="footer_copy">
+            Copyright 2000-2021 SNULife. All rights reserved.
+        </div>
+    </footer>
+</body>
+
+</html>

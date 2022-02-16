@@ -44,7 +44,7 @@
 
         .footer_copy {
             margin-top: 10px;
-            margin-bottom: 30px;
+            padding-bottom: 30px;
             color: #ADB5BD;
         }
 
@@ -250,14 +250,6 @@
             <br>
         </div>
         <div class="main">
-        </div>
-        <div class="info">
-            <span class="info_title">SNULife 44기 디자인팀 리크루팅</span><br>
-            <br>
-            많은 지원 부탁드립니다! 🙌<br><br>
-            지원기간 : 2월 18일(금) ~ 2월 25일(금)<br><br>
-            면접날짜 : 3월 2일(수) ~ 3월 4일(금) 중<br><br>
-            <button class="apply" id="apply_bottom">지원하기</button>
         </div>
     </div>
 
