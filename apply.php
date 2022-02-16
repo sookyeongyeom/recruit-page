@@ -44,7 +44,7 @@
 
         .footer_copy {
             margin-top: 10px;
-            padding-bottom: 30px;
+            margin-bottom: 30px;
             color: #ADB5BD;
         }
 
@@ -243,111 +243,13 @@
     <div class="container" style="color:#ADB5BD">
         <div class="top_title">
             <div class="subtitle">
-                서울대학교 구성원을 위한 커뮤니티
+                44기 디자인팀 리크루팅 지원서
             </div>
             <img class="title_img"
                 src="https://user-images.githubusercontent.com/98504939/154136887-c8530b59-5590-4ee1-8281-41d40004de07.svg">
             <br>
-            <div class="top_apply">
-                <button class="apply" onclick="location.href='apply.php'">지원하기</button>
-            </div>
         </div>
         <div class="main">
-            <div class="title">
-                SNULife 44기 디자인팀 리크루팅
-            </div>
-            <hr>
-            <div class="welcome">
-                <span style="color:#03B8F1">SNULife</span>에서 <span style="color:#03B8F1">44기 신입 디자이너 님</span>을 모십니다!
-            </div>
-            <hr class="hr_aboutus">
-            <div class="question_box">
-                <div class="question" id="most_top">
-                    SNULife는 어떤 동아리인가요?
-                </div>
-            </div>
-            <div class="answer">
-                <span class="answer_700">📌 SNULife는 이런 동아리에요</span><br>
-                <br>
-                SNULife는 <span class="answer_blue">서울대학교 재학생과 졸업생들을 위한 온라인 커뮤니티</span>를 운영하고 있어요.<br>
-                어떻게 하면 유저들이 좋은 경험을 할까 고민하며<br>
-                서울대 구성원들을 위한 다양한 서비스들을 기획하고 출시해요!
-            </div>
-            <div class="question_box">
-                <div class="question">
-                    SNULife 디자이너는 무엇을 하나요?
-                </div>
-            </div>
-            <div class="answer">
-                <span class="answer_700">📌 SNULife 디자이너는 이런 걸 해요</span><br>
-                <br>
-                1. Figma라는 툴을 사용해 <span class="answer_blue">웹사이트와 어플리케이션</span>을 디자인해요.<br>
-                또한 어떻게 설계해야 사용자를 위한 길인지, 또 우리의 가치를 전달할 수 있는지 함께 고민해요.<br>
-                <br>
-                2. SNULife의 비전과 아이덴티티를 전달할 수 있도록<br>
-                <span class="answer_blue">디자인 시스템</span>을 구축하고 브랜딩해요.<br>
-                <br>
-                3. 유저들에게 즐거움을 줄 수 있는 각종 <span class="answer_blue">이벤트</span>를 기획하고<br>
-                캐릭터를 이용한 <span class="answer_blue">일러스트, 카툰</span> 등의 다양한 콘텐츠를 만들어요.<br>
-                <br>
-                4. 다양한 이벤트 <span class="answer_blue">배너/포스터와 굿즈</span>를 만들어요.<br>
-                <br>
-                5. 그 밖에 자신이 가진 아이디어가 있다면 프로젝트를 제안할 수 있어요.<br>
-                <br>
-                👉 자신의 하드 드라이브 안에만 남는 작업이 아닌<br>
-                <span class="answer_blue">수많은 사람들이 실제로 사용하는 프로덕트</span>를 만들고<br>
-                그 결과를 지켜보면 성취감과 뿌듯함을 느낄 수 있어요!<br>
-                <br>
-                그리고 자기의 포트폴리오로 가져갈 수도 있답니다.<br>
-                이것이 SNULife가 줄 수 있는 최고의 경험이라고 생각해요.
-            </div>
-            <div class="question_box">
-                <div class="question">
-                    SNULife에 들어가면 어떤 점이 좋나요?
-                </div>
-            </div>
-            <div class="answer">
-                <span class="answer_700">📌 SNULife에 들어오면 이런 점이 좋아요</span><br>
-                <br>
-                1. 기획팀, 개발팀과 <span class="answer_blue">협업 경험</span>을 쌓을 수 있어요<br>
-                <br>
-                2. <span class="answer_blue">20만 유저</span>가 사용하는 커뮤니티에 자신의 작업이 적용되고 포트폴리오로 활용할 수 있어요<br>
-                <br>
-                3. 인터넷 강의비, 오프라인 세미나비 등 <span class="answer_blue">개인 학습비</span>를 지원해요<br>
-                <br>
-                4. 서울대 최고 수준의 <span class="answer_blue">동아리 방</span>을 제공해요
-            </div>
-            <div class="question_box">
-                <div class="question">
-                    SNULife 디자인팀은 어떤 동료를 찾나요?
-                </div>
-            </div>
-            <div class="answer">
-                <span class="answer_700">📌 SNULife 디자인팀은 이런 동료를 찾아요</span><br>
-                <br>
-                1. <span class="answer_blue">커뮤니티 서비스의 UX/UI 설계</span>를 진행해보고 싶은 사람<br>
-                <br>
-                2. <span class="answer_blue">브랜딩</span>에 관심있는 사람<br>
-                <br>
-                3. <span class="answer_blue">개발/기획 팀과 협업 및 소통</span>을 경험하고 싶은 사람<br>
-                <br>
-                4. <span class="answer_blue">새로운 걸 배우기 좋아하는</span> 사람<br>
-                <br>
-                <br>
-                SNULife는 화려한 스킬 실력보다는<br>
-                <span class="answer_blue" style="font-weight:bold">“동아리 활동에 적극적으로 참여할 수 있는 분”</span>을 원해요!<br>
-                <br>
-                <br>
-                + 또한 아래의 조건에 해당하는 분을 모시고 있어요.<br>
-                <br>
-                ✅ <span class="answer_blue">연속 3학기 이상</span> 활동 가능하신 분<br>
-                <br>
-                ✅ <span class="answer_blue">매주 금요일 7시</span>에 회의 참여하실 수 있는 분<br>
-                <br>
-                ✅ 하루 정도의 <span class="answer_blue">OT</span>에 참여하실 수 있는 분<br>
-                <br>
-                ✅ <span class="answer_blue">Adobe Photoshop, Illustrator</span> 기초적인 능력을 가지고 계신 분
-            </div>
         </div>
         <div class="info">
             <span class="info_title">SNULife 44기 디자인팀 리크루팅</span><br>
@@ -355,7 +257,7 @@
             많은 지원 부탁드립니다! 🙌<br><br>
             지원기간 : 2월 18일(금) ~ 2월 25일(금)<br><br>
             면접날짜 : 3월 2일(수) ~ 3월 4일(금) 중<br><br>
-            <button class="apply" id="apply_bottom" onclick="location.href='apply.php'">지원하기</button>
+            <button class="apply" id="apply_bottom">지원하기</button>
         </div>
     </div>
 
