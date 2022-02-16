@@ -142,7 +142,9 @@
         }
 
         .apply:hover {
-            box-shadow: 0px 0px 5px 1px;
+            background: #F8F9FA;
+            box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
         }
 
         .apply_box {
@@ -189,6 +191,10 @@
         }
 
         input[type=checkbox]:hover+label {
+            cursor: pointer;
+        }
+
+        input[type=file]:hover+label {
             cursor: pointer;
         }
 
@@ -354,7 +360,8 @@
             text-align: left;
             position: relative;
             bottom: 9%;
-            color: #5DD2F6
+            color: #5DD2F6;
+            font-weight: bold;
         }
     </style>
 </head>
