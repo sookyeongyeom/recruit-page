@@ -413,7 +413,7 @@
                 <div class="empty"></div>
                 <div class="form_box" id="form_box">
                     <div class="form_question">지원자 분의 <b>전화번호</b>를 적어주세요. *</div>
-                    <div class="form_answer"><input type=text class="form_text" name="contact"
+                    <div class="form_answer"><input type=text class="form_text" name="phone"
                             placeholder="결과를 알려드리기 위한 용도로만 사용합니다. 리크루팅 종료 후 폐기합니다." required></div>
                 </div>
                 <div class="empty"></div>
@@ -422,8 +422,10 @@
                         3학기 내에 병역, 교환학생, 인턴 계획이 있으시면 'No'에 체크해주세요. *</div>
                     <div class="form_answer">
                         <div class="radio">
-                            <input type="radio" name="semester" id="yes"><label for="yes"></label>
-                            <input type="radio" name="semester" id="no"><label for="no"></label>
+                            <input type="radio" name="semester" id="yes" name="semester" value="yes"><label
+                                for="yes"></label>
+                            <input type="radio" name="semester" id="no" name="semester" value="no"><label
+                                for="no"></label>
                         </div>
                     </div>
                 </div>
@@ -433,12 +435,14 @@
                         해당 사항이 없다면 ‘Other’에 자유롭게 적어주세요. *</div>
                     <div class="form_answer">
                         <div class="checkbox">
-                            <input type="checkbox" id="photoshop"><label for="photoshop"></label>
-                            <input type="checkbox" id="illustrator"><label for="illustrator"></label>
-                            <input type="checkbox" id="figma"><label for="figma"></label>
-                            <input type="checkbox" id="xd"><label for="xd"></label>
-                            <input type="checkbox" id="sketch"><label for="sketch"></label>
-                            <input type="checkbox" id="other"><label for="other"></label>
+                            <input type="checkbox" id="photoshop" name="tool[]" value="photoshop"><label
+                                for="photoshop"></label>
+                            <input type="checkbox" id="illustrator" name="tool[]" value="illustrator"><label
+                                for="illustrator"></label>
+                            <input type="checkbox" id="figma" name="tool[]" value="figma"><label for="figma"></label>
+                            <input type="checkbox" id="xd" name="tool[]" value="xd"><label for="xd"></label>
+                            <input type="checkbox" id="sketch" name="tool[]" value="sketch"><label for="sketch"></label>
+                            <input type="checkbox" id="other" name="tool[]" value="other"><label for="other"></label>
                         </div>
                     </div>
                     <div class="empty"></div>
@@ -457,7 +461,7 @@
                         <div class="form_question">지원자 분이 <b>보여주시고 싶은 작업</b>이 있다면 파일로 첨부해주세요. *</div>
                         <div class="form_answer" id="form_answer_file">
                             <div class="file_box">
-                                <input type="file" multiple id="form_file" style="display:none">
+                                <input type="file" multiple id="form_file" style="display:none" name="file">
                                 <label for="form_file"></label>
                                 <div class="file_info">선택된 파일 없음</div>
                             </div>
