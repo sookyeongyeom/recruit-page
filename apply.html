@@ -575,6 +575,17 @@
                 return false
             }
         }
+        function file_upload() {
+            files = document.getElementById('form_file').files;
+            arr = [];
+            for (i = 0; i < files.length; i++) {
+                filename = files[i].name;
+                arr.push(filename)
+            }
+            total_files = arr.join('<br>');
+            document.getElementById('file_cnt').innerText = files.length + "개의 파일이 업로드됩니다.";
+            document.getElementById('file_info').innerHTML = total_files;
+        }
     </script>
 </head>
 
@@ -670,19 +681,25 @@
                     </div>
                     <div class="empty"></div>
                     <div class="form_box">
-                        <div class="form_question">지원자 분이 <b>보여주시고 싶은 작업</b>이 있다면 파일로 첨부해주세요. *</div>
+                        <div class="form_question">지원자 분이 <b>보여주시고 싶은 작업</b>이 있다면 파일로 첨부해주세요. (한꺼번에 첨부해주세요!)</div>
                         <div class="form_answer" id="form_answer_file">
                             <div class="file_box">
-                                <input type="file" multiple id="form_file" style="display:none" name="file">
+                                <input type="file" multiple id="form_file" onchange="file_upload();"
+                                    style="display: none;" name="file[]">
                                 <label for="form_file"></label>
                             </div>
                         </div>
                     </div>
-                    <div class="apply_box">
-                        <button class="apply">제출하기</button>
-                    </div>
-            </form>
+                    <div id="file_cnt"></div>
+                    <div class="file_info" id="file_info">아아</div>
+                    <div>파일영역 수정중임</div>
+                </div>
         </div>
+        <div class="apply_box">
+            <button class="apply">제출하기</button>
+        </div>
+        </form>
+    </div>
     </div>
     <footer>
         <div class="footer_img">
