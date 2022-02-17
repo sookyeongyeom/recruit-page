@@ -15,6 +15,11 @@
             margin: 0;
         }
 
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
         header {
             border-bottom: solid 1px #CED4DA;
         }
@@ -504,10 +509,10 @@
                 color: #03B8F1;
                 background: #FFFFFF;
                 font-weight: bold;
-                font-size: 1.3em;
-                padding: 0.5%;
-                padding-left: 2%;
-                padding-right: 2%;
+                font-size: 1em;
+                padding: 1%;
+                padding-left: 4%;
+                padding-right: 4%;
             }
 
             .apply:hover {
@@ -548,14 +553,36 @@
 
         }
     </style>
+    <script>
+        function escape_index() {
+            var escape_index = confirm("메인 화면으로 돌아가시겠습니까? (변경 사항은 저장되지 않습니다.)");
+            if (escape_index) {
+                location.href = "index.html";
+            }
+        }
+        function escape_apply() {
+            var escape_apply = confirm("새로고침하시겠습니까? (변경 사항은 저장되지 않습니다.)");
+            if (escape_apply) {
+                location.href = "apply.html";
+            }
+        }
+        function confirm_submit() {
+            var confirm_submit = confirm("지원서를 제출하시겠습니까? (추후 수정이 불가합니다.)");
+            if (confirm_submit) {
+                return true
+            } else {
+                return false
+            }
+        }
+    </script>
 </head>
 
 <body>
     <header>
         <ul>
-            <li class="most_left">44기 리크루팅</li>
+            <li class="most_left"><a href="javascript:escape_index();">44기 리크루팅</a></li>
             <li>디자인팀</li>
-            <li class="most_right">지원하기</li>
+            <li class="most_right"><a href="javascript:escape_apply();">지원하기</a></li>
         </ul>
     </header>
 
@@ -569,11 +596,11 @@
             <br>
         </div>
         <div class="main">
-            <form method="post" action="apply_ok.php">
+            <form method="post" action="apply_ok.php" onsubmit="return confirm_submit()">
                 <div class="form_box">
                     <div class="form_question">지원자 분의 <b>이름</b>을 적어주세요. *</div>
                     <div class="form_answer"><input type=text class="form_text" name="name" placeholder="e.g. 서린이"
-                            required>
+                            required autofocus>
                     </div>
                 </div>
                 <div class="empty"></div>
