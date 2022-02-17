@@ -27,6 +27,11 @@
         ul {
             list-style: none;
             display: inline-block;
+            padding: 0 0 0 0 !important
+        }
+
+        header ul {
+            margin-left: 2em;
         }
 
         footer ul {
@@ -54,15 +59,18 @@
 
         li {
             float: left;
-            border-right: 1px solid #E3E7EB;
             overflow: visible;
             font-size: 0.9em;
             color: #343A40;
             margin-top: 0.4em;
             margin-bottom: 0.4em;
             padding: 0px;
-            padding-left: 2em;
             padding-right: 2em;
+        }
+
+        li:after {
+            margin-left: 2em;
+            content: url("https://user-images.githubusercontent.com/98504939/154381002-c12dfb47-9801-4b9d-80d3-a6df0de43679.svg")
         }
 
         footer li {
@@ -70,8 +78,17 @@
             color: #868E96;
         }
 
+        .most_left {
+            padding-left: 2em;
+        }
+
         .most_right {
             border: 0;
+        }
+
+        .most_right:after {
+            visibility: hidden;
+            margin-left: 0px;
         }
 
         .container {
@@ -261,6 +278,10 @@
                 padding: 0 0 0 0 !important
             }
 
+            header ul {
+                margin-left: 0;
+            }
+
             footer ul {
                 margin: 0;
             }
@@ -287,23 +308,36 @@
 
             li {
                 float: left;
-                border-right: 1px solid #E3E7EB;
                 overflow: visible;
                 font-size: 0.9em;
                 color: #343A40;
                 margin-top: 0.4em;
                 margin-bottom: 0.4em;
                 padding: 0px;
-                padding-left: 1em;
                 padding-right: 1em;
             }
 
             footer li {
                 margin: 0;
                 color: #868E96;
-                padding-left: 0.5em;
                 padding-right: 0.5em;
                 font-size: 0.5em;
+            }
+
+            footer li:after {
+                margin-left: 0.5em;
+            }
+
+            footer .most_left {
+                padding-left: 0.5em;
+            }
+
+            li:after {
+                margin-left: 1em;
+            }
+
+            .most_left {
+                padding-left: 1em;
             }
 
             .most_right {
@@ -492,7 +526,7 @@
 <body>
     <header>
         <ul>
-            <li>44기 리크루팅</li>
+            <li class="most_left">44기 리크루팅</li>
             <li>디자인팀</li>
             <li class="most_right">지원하기</li>
         </ul>
@@ -690,7 +724,7 @@
         </div>
         <div class="footer_ul">
             <ul>
-                <li>SNULife 소개</li>
+                <li class="most_left">SNULife 소개</li>
                 <li>이용약관</li>
                 <li>개인정보 처리방침</li>
                 <li class="most_right">커뮤니티 이용규칙</li>
