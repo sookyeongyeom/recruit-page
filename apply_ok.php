@@ -9,7 +9,24 @@
     $tool = $_POST['tool'];
     $tool = implode('|', $tool);
     $intro = $_POST['intro'];
-    $file = $_POST['file'];
+    
+    $error = $_FILES['file']['error'];
+    $tmpfile = $_FILES['file']['tmp_name'];
+    $filename = $_FILES['file']['name'];
+    $filename = $name."_".$filename;
+    $folder = "./file/".$filename;
+
+    if( $error != UPLOAD_ERR_OK ){
+        switch( $error ) {
+                case UPLOAD_ERR_INI_SIZE:
+                case UPLOAD_ERR_FORM_SIZE:
+                    echo "<script>alert('파일이 적정 용량을 초과합니다.');";
+                    echo "window.history.back()</script>";
+                    exit;
+        }
+    }
+
+    move_uploaded_file($tmpfile, $folder);
 
     $conn= mysqli_connect('localhost', 'yeon', '7173', 'snu_recruit');
 
@@ -20,7 +37,7 @@
     $stmt = mysqli_prepare($conn, $sql);
     if($stmt === false) { echo('Statement 생성 실패 : ' . mysqli_error($conn)); exit(); }
 
-    $bind = mysqli_stmt_bind_param($stmt, "sssssssss", $name, $student_id, $department, $snulife_id, $phone, $semester, $tool, $intro, $file);
+    $bind = mysqli_stmt_bind_param($stmt, "sssssssss", $name, $student_id, $department, $snulife_id, $phone, $semester, $tool, $intro, $filename);
     if($bind === false) { echo('파라미터 바인드 실패 : ' . mysqli_error($conn)); exit(); }
 
     $exec = mysqli_stmt_execute($stmt);
