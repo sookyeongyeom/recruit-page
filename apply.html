@@ -188,6 +188,7 @@
             color: #495057;
             margin: 1.5px;
             border-radius: 0px;
+            font-size: 0.9em;
         }
 
         .form_text:hover {
@@ -547,7 +548,7 @@
             }
 
             #form_file+label {
-                width: 98%
+                width: 98%;
             }
 
             .file_area {
@@ -597,6 +598,14 @@
             document.getElementById('file_hover').style.display = "none";
             document.getElementById('file_cnt').innerHTML = files.length + "개의 파일이 업로드됩니다.<br>";
             document.getElementById('file_info').innerHTML = total_files;
+        }
+        function tool_other() {
+            other = document.getElementById('other').checked;
+            if (other) {
+                document.getElementById('other_text').style.display = "block";
+            } else {
+                document.getElementById('other_text').style.display = "none";
+            }
         }
     </script>
 </head>
@@ -667,7 +676,7 @@
                 <div class="empty"></div>
                 <div class="form_box">
                     <div class="form_question">지원자 분이 <b>다룰 줄 아는 툴</b>을 모두 골라주세요.<br>
-                        해당 사항이 없다면 ‘Other’에 자유롭게 적어주세요. *</div>
+                        해당 사항이 없다면 ‘Other’에 자유롭게 적어주세요.</div>
                     <div class="form_answer">
                         <div class="checkbox">
                             <input type="checkbox" id="photoshop" name="tool[]" value="photoshop"><label
@@ -677,8 +686,11 @@
                             <input type="checkbox" id="figma" name="tool[]" value="figma"><label for="figma"></label>
                             <input type="checkbox" id="xd" name="tool[]" value="xd"><label for="xd"></label>
                             <input type="checkbox" id="sketch" name="tool[]" value="sketch"><label for="sketch"></label>
-                            <input type="checkbox" id="other" name="tool[]" value="other"><label for="other"></label>
+                            <input type="checkbox" id="other" name="tool[]" onclick="tool_other()" value="other"><label
+                                for="other"></label>
                         </div>
+                        <div id="other_text" style="display: none;"><input autocomplete="off" type="text"
+                                name="other_tool" class="form_text" placeholder="선택지에 없으나 다룰 줄 아는 툴을 적어주세요."></div>
                     </div>
                 </div>
                 <div class="empty"></div>

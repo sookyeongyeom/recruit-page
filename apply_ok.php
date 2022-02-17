@@ -7,6 +7,10 @@
     $phone = $_POST['phone'];
     $semester = $_POST['semester'];
     $tool = $_POST['tool'];
+    $other = $_POST['other_tool'];
+    if (in_array("other", $tool) && $other){
+        array_push($tool, $other);
+    }
     $tool = implode('|', $tool);
     $intro = $_POST['intro'];
 
