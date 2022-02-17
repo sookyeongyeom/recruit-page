@@ -361,7 +361,7 @@
             height: 120%;
         }
 
-        #form_file+label {
+        /* #form_file+label {
             width: 100%;
             height: 100%;
             display: inline-block;
@@ -370,28 +370,35 @@
 
         #form_file:hover+label {
             background: url("https://user-images.githubusercontent.com/98504939/154214948-cf2379b5-8e34-472a-b7fb-b2352b967ea1.svg") no-repeat 0 0px / contain;
-        }
+        } */
 
-        .file_box {
-            display: inline-block;
-            text-align: center;
-            position: relative;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        #form_answer_file {
-            height: 15em;
-        }
-
-        .file_info {
-            text-align: left;
-            position: relative;
-            bottom: 9%;
+        .file_area {
+            border: 3px dashed #5DD2F6;
             color: #5DD2F6;
+            border-radius: 3px;
+            padding: 5%;
+            font-size: 1.2em;
             font-weight: bold;
+        }
+
+        @media (hover: hover) {
+            .file_area:hover {
+                border-color: #FFFFFF;
+                color: #FFFFFF;
+                background: rgba(93, 210, 246, 0.25);
+            }
+
+            .file_area:hover #file_cnt {
+                display: none;
+            }
+
+            .file_area:hover #file_info {
+                display: none;
+            }
+
+            .file_area:hover #file_hover {
+                display: inline-block !important;
+            }
         }
 
         @media (max-width: 767px) {
@@ -539,17 +546,13 @@
                 width: 95%;
             }
 
-            #form_answer_file {
-                height: 8em;
-            }
-
-            .file_info {
-                bottom: 20%;
-                left: 1%
-            }
-
             #form_file+label {
                 width: 98%
+            }
+
+            .file_area {
+                padding: 8%;
+                font-size: 1em;
             }
 
         }
@@ -577,13 +580,22 @@
         }
         function file_upload() {
             files = document.getElementById('form_file').files;
+            if (files.length == 0) {
+                document.getElementById('file_hover').innerHTML = "Click here!<br>Size limited : 2MB";
+                document.getElementById('file_hover').style.display = "inline-block";
+                document.getElementById('file_cnt').innerHTML = "";
+                document.getElementById('file_info').innerHTML = "";
+                return
+            }
             arr = [];
             for (i = 0; i < files.length; i++) {
                 filename = files[i].name;
                 arr.push(filename)
             }
             total_files = arr.join('<br>');
-            document.getElementById('file_cnt').innerText = files.length + "개의 파일이 업로드됩니다.";
+            document.getElementById('file_hover').innerHTML = "파일을 변경하시겠습니까?<br>현재의 파일은 제거됩니다.";
+            document.getElementById('file_hover').style.display = "none";
+            document.getElementById('file_cnt').innerHTML = files.length + "개의 파일이 업로드됩니다.<br>";
             document.getElementById('file_info').innerHTML = total_files;
         }
     </script>
@@ -668,39 +680,39 @@
                             <input type="checkbox" id="other" name="tool[]" value="other"><label for="other"></label>
                         </div>
                     </div>
-                    <div class="empty"></div>
-                    <div class="form_box">
-                        <div class="form_question">지원자 분에 대한 <b>소개</b>와 <b>SNULife 디자인팀에 지원하신 동기</b> 등을 자유롭게 적어주세요. *
-                        </div>
-                        <div class="form_answer" id="form_intro">
-                            <div class="intro_box">
-                                <textarea class="form_textarea" name="intro" placeholder="분량은 자유입니다."
-                                    required></textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="empty"></div>
-                    <div class="form_box">
-                        <div class="form_question">지원자 분이 <b>보여주시고 싶은 작업</b>이 있다면 파일로 첨부해주세요. (한꺼번에 첨부해주세요!)</div>
-                        <div class="form_answer" id="form_answer_file">
-                            <div class="file_box">
-                                <input type="file" multiple id="form_file" onchange="file_upload();"
-                                    style="display: none;" name="file[]">
-                                <label for="form_file"></label>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="file_cnt"></div>
-                    <div class="file_info" id="file_info">아아</div>
-                    <div>파일영역 수정중임</div>
                 </div>
+                <div class="empty"></div>
+                <div class="form_box">
+                    <div class="form_question">지원자 분에 대한 <b>소개</b>와 <b>SNULife 디자인팀에 지원하신 동기</b> 등을 자유롭게 적어주세요. *
+                    </div>
+                    <div class="form_answer" id="form_intro">
+                        <div class="intro_box">
+                            <textarea class="form_textarea" name="intro" placeholder="분량은 자유입니다." required></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="empty"></div>
+                <div class="form_box">
+                    <div class="form_question">지원자 분이 <b>보여주시고 싶은 작업</b>이 있다면 파일로 첨부해주세요. (한꺼번에 첨부해주세요!)</div>
+                    <div class="form_answer" id="form_answer_file">
+                        <input type="file" multiple id="form_file" onchange="file_upload();" style="display: none;"
+                            name="file[]">
+                        <label for="form_file">
+                            <div class="file_area" id="file_area">
+                                <span id="file_hover">Click here!<br>Size limited : 2MB</span>
+                                <span id="file_cnt"></span>
+                                <span id="file_info"></span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div class="apply_box">
+                    <button class="apply">제출하기</button>
+                </div>
+            </form>
         </div>
-        <div class="apply_box">
-            <button class="apply">제출하기</button>
-        </div>
-        </form>
     </div>
-    </div>
+
     <footer>
         <div class="footer_img">
             <img id="footer_img_each" class="footer_img_1"
